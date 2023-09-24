@@ -8,5 +8,6 @@ import java.util.List;
 public interface ClientService {
     public CreateClientResponse saveClient(CreateClientRequest saveClientRequest);
 
-    public List<CreateClientResponse> findAllClients();
+//    public List<CreateClientResponse> findAllClients();
+    public CreateClientResponse findByClientId(Long clientId);
 }

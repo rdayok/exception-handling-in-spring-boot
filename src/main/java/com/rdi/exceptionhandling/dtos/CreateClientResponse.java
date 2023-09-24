@@ -1,16 +1,17 @@
 package com.rdi.exceptionhandling.dtos;
 
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Getter
+@Setter
 // Adding a static method that set all attributes of the Client entity -> "build"
-@AllArgsConstructor(staticName = "build")
+@AllArgsConstructor
 @NoArgsConstructor
 public class CreateClientResponse {
-    @Id
-    @GeneratedValue
     private Long id;
     private String name;
     private String email;

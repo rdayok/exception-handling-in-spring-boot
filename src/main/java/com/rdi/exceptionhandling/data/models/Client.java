@@ -1,9 +1,8 @@
 package com.rdi.exceptionhandling.data.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -13,13 +12,15 @@ import lombok.Setter;
 @Getter
 @Setter
 // Adding a static method that set all attributes of the Client entity -> "build"
-@AllArgsConstructor(staticName = "build")
+@AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "CLIENT")
 public class Client {
     @Id
-    @GeneratedValue
-    private Long id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long clientId;
+    @NotNull(message = "please fill in your name")
+    @NotBlank(message = "please fill in your name")
     private String name;
     private String email;
     private String phoneNumber;
